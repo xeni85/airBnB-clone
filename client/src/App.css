@@ -17,4 +17,7 @@
   height: 2em;
 }
 
-
+.header-search-button {
+  background-color: inherit;
+  border: none;
+}
