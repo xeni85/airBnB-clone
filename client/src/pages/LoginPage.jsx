@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    async function handleLoginSubmit (e) {
+    async function login (e) {
         e.preventDefault();
         try {
             const {data} = await axios.post('/login', {email,password});
@@ -16,9 +17,9 @@ const LoginPage = () => {
           }
         }
     return (
-    <div className='login-form-container' onSubmit={handleLoginSubmit}>
+    <div className='login-form-container' >
         <h1 className='login-title'>Login</h1>
-        <form action="" className='login-form'>
+        <form action="" className='login-form' onClick={login}>
             <input type="email" placeholder='email'value={email} onChange={e => setEmail(e.target.value)}/>
             <input type="password" placeholder='password'value={password} onChange={e => setPassword(e.target.value)}/>
             <button>Login</button>
