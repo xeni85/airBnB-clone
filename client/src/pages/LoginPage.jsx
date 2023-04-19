@@ -19,7 +19,7 @@ const LoginPage = () => {
     return (
     <div className='login-form-container' >
         <h1 className='login-title'>Login</h1>
-        <form action="" className='login-form' onClick={login}>
+        <form action="" className='login-form' onSubmit={login}>
             <input type="email" placeholder='email'value={email} onChange={e => setEmail(e.target.value)}/>
             <input type="password" placeholder='password'value={password} onChange={e => setPassword(e.target.value)}/>
             <button>Login</button>
