@@ -5,9 +5,12 @@ const PlacesPage = () => {
   const {action } = useParams();
   return (
     <div>
-        <div className='places-container'>
+        {action != 'new' && (<div className='places-container'>
             <Link className='places-link-new my-profile my-bookings ' to={'/account/places/new'}>Add a place</Link>
-        </div>
+        </div>)}
+        {action === 'new' && (<div className='places-container'>
+            form
+        </div>)}
         
     </div>
   )
