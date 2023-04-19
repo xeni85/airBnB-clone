@@ -7,13 +7,18 @@ const RegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function register(e) {
+    async function register(e) {
         e.preventDefault();
-        axios.post('/register', {
+        try {await axios.post('/register', {
             name,
             email,
             password,
         })
+        alert('Register Success')
+        } catch (err) {
+            alert('Error: ' + err.message);
+        }
+        
     }
   return (
     <div className='login-form-container'>
@@ -25,7 +30,7 @@ const RegisterPage = () => {
             <button>Register</button>
             <div className='register-container'>
                 Do you already have an account?
-                <Link to={'/login'} className='register-link'>Register</Link>
+                <Link to={'/login'} className='register-link'>Login</Link>
             </div>
         </form>
     </div>
