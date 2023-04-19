@@ -12,13 +12,14 @@ const LoginPage = () => {
         try {
             await axios.post('/login', {email,password});
             alert('Login successful');
+            setRedirect(true);
           } catch (e) {
             alert('Login failed');
           }
         }
 
         if(redirect) {
-            return <
+            return navigate('/')
         }
     return (
     <div className='login-form-container' >
