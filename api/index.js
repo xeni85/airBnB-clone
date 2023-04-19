@@ -8,9 +8,11 @@ const bSalt = bcrypt.genSaltSync(10);
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 const jwtSecret = 'skdfnlskdhaofijwekrn2934sdf'
+const cookieParser = require('cookie-parser')
 
 
 app.use(express.json());
+app.use(cookieParser())
 app.use(cors({
     credentials: true,
     origin: 'http://127.0.0.1:5173',
@@ -60,6 +62,14 @@ app.post('/login', async (req, res) => {
 
 app.get('/profile', (req, res) => {
     const {token} = req.cookies
+    if(token) {
+        jwt.verify(token, jwtSecret, {}, (err, user)=>{
+            if(err) throw err;
+            res.json(user);
+        })
+    }else {
+        res.json(null)
+    }
 res.json('user info')
 })
 
