@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const Place = require('./models/Place');
 const bcrypt = require('bcryptjs');
 const bSalt = bcrypt.genSaltSync(10);
 const jwt = require('jsonwebtoken');
@@ -63,9 +64,10 @@ app.post('/login', async (req, res) => {
 app.get('/profile', (req, res) => {
     const {token} = req.cookies
     if(token) {
-        jwt.verify(token, jwtSecret, {}, (err, user)=>{
+        jwt.verify(token, jwtSecret, {}, async (err, user)=>{
             if(err) throw err;
-            res.json(user);
+            const {name, email, _id} = await User.findById(user._id);
+            res.json({name, email,_id});
         })
     }else {
         res.json(null)
@@ -73,5 +75,9 @@ app.get('/profile', (req, res) => {
 res.json('user info')
 })
 
+
+app.post('/logout', (req, res) => {
+    res.cookie('token', '').json(true);
+})
 
 app.listen(4000);
