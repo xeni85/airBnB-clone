@@ -29,7 +29,7 @@ const LoginPage = () => {
         <form action="" className='login-form' onSubmit={login}>
             <input type="email" placeholder='email'value={email} onChange={e => setEmail(e.target.value)}/>
             <input type="password" placeholder='password'value={password} onChange={e => setPassword(e.target.value)}/>
-            <button>Login</button>
+            <button className='login-form-button'>Login</button>
             <div className='register-container'>
                 Don't have an account yet?
                 <Link to={'/register'} className='register-link'>Register now</Link>
