@@ -21,7 +21,7 @@ const LoginPage = () => {
         }
       }
         if(redirect) {
-              return redirect ? navigate('/') : null
+              return navigate('/')
         }
     return (
     <div className='login-form-container' >

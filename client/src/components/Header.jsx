@@ -1,16 +1,17 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from './UserContext'
 
 const Header = () => {
-  const {user} = UserContext
+  const {user} = useContext(UserContext)
   return (
     <header>
-    <a href="" className="header-container">
+    <Link to={'.'} className="header-container">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 logo">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
       </svg>
       <span className='header-span'>airBnZ</span>
-    </a>
+    </Link>
     <div className='header-link-container'>
       <div>Anywhere</div>
       <div className='border-link'>  </div>
@@ -23,7 +24,7 @@ const Header = () => {
         </svg>
       </button>
     </div>
-    <Link to={'/login'} className="user-link-container">
+    <Link to={user?'/account':'/login'} className="user-link-container">
       <div className="hamburger-link">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
