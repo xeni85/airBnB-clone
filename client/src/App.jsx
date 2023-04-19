@@ -4,9 +4,10 @@ import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import Layout from './components/Layout'
+import AccountPage from './components/AccountPage'
 import axios from 'axios'
 import { UserContextProvider } from './components/UserContext'
-import AccountPage from './components/AccountPage'
+
 
 axios.defaults.baseURL = 'http://127.0.0.1:4000'
 axios.defaults.withCredentials = true
