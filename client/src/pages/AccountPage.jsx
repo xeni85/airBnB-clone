@@ -13,7 +13,8 @@ const AccountPage = () => {
       return navigate('/login')
     }
     return (<div>
-      <nav>
+      <nav className='account-links-container'>
+        <Link to={'/account'}>My profile</Link>
         <Link to={'/account/bookings'}>My bookings</Link>
         <Link to={'/account/places'}>My places</Link>
       </nav>
