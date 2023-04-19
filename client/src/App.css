@@ -145,8 +145,19 @@ button:hover {
 .account-links-container {
   display: flex;
   width: 100%;
-  gap: 1em;
+  gap: 2em;
   padding: 0.5rem;
-  margin-top: 1em;
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
 }
 
+.my-profile, .my-bookings, .my-places {
+  padding: 0.5rem;
+  border-radius: 35px;
+
+}
+.my-profile {
+  background-color: rgb(241, 93, 117);
+  color: white;
+}
