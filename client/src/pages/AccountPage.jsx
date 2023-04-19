@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import { UserContext } from '../components/UserContext'
 import {useNavigate, Link, useParams} from 'react-router-dom'
+import axios from 'axios'
 
 const AccountPage = () => {
   const {ready, user} = useContext(UserContext)
