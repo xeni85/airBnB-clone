@@ -8,7 +8,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem;
 }
 
 .header-container {
@@ -18,7 +17,6 @@ header {
   text-decoration: none;
   color: rgb(33, 33, 33);
   font-size: 1.5rem;
-  padding: 0.5rem;
 }
 
 .header-span {
@@ -77,4 +75,55 @@ header {
   background-color: gray;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.layout-container {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 900;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 50vw;
+  padding: .2rem;
+} 
+
+.login-form>input {
+  border: none;
+  width: 50vw;
+  height: 2rem;
+  border:gray solid .01rem;
+  border-radius: 10px;
+  padding: .2rem;
+  margin: .2rem;
+}
+
+.login-form>button {
+  background-color:rgb(241, 93, 117);
+  width: 50vw;
+  border: none;
+  color: white;
+  padding: .8rem;
+  margin: .5rem;
+  border-radius: 10px;
+}
+
+button:hover { 
+  cursor: pointer;
 }
