@@ -14,8 +14,8 @@ const AccountPage = () => {
     }
     return (<div>
       <nav>
-        <Link>
-        </Link>
+        <Link to={'/account/bookings'}>My bookings</Link>
+        <Link to={'/account/places'}>My places</Link>
       </nav>
     </div>)
 }
