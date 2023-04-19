@@ -127,3 +127,13 @@ header {
 button:hover { 
   cursor: pointer;
 }
+
+.register-container {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.register-link {
+  color: black;
+  font-weight: bold;
+}

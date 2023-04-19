@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <div className='login-form-container'>
         <h1 className='login-title'>Login</h1>
@@ -19,4 +19,4 @@ const LoginPage = () => {
 }
 
 
-export default LoginPage
+export default RegisterPage
