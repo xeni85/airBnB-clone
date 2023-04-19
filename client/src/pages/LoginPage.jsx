@@ -20,12 +20,9 @@ const LoginPage = () => {
           alert('Login failed');
         }
       }
-      useEffect(() => {
         if(redirect) {
-           
-              return navigate('/')
+              return redirect ? navigate('/') : null
         }
-    }, [])
     return (
     <div className='login-form-container' >
         <h1 className='login-title'>Login</h1>
