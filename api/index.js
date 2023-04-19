@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config()
 const jwtSecret = 'skdfnlskdhaofijwekrn2934sdf'
 
+
 app.use(express.json());
 app.use(cors({
     credentials: true,
@@ -56,5 +57,11 @@ app.post('/login', async (req, res) => {
         res.json('not found')
     }
 })
+
+app.get('/profile', (req, res) => {
+    const {token} = req.cookies
+res.json('user info')
+})
+
 
 app.listen(4000);
