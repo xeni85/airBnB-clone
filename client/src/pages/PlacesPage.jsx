@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const PlacesPage = () => {
+  const {action } = useParams();
   return (
     <div>
         <div className='places-container'>
-            <Link></Link>
+            <Link className='places-link-new my-profile my-bookings ' to={'/account/places/new'}>Add a place</Link>
         </div>
-        My places
+        
     </div>
   )
 }

@@ -172,3 +172,12 @@ button:hover {
   align-items: center;
   margin-top: .5em;
 }
+
+.places-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.places-link-new {
+  padding: .8em;
+}
