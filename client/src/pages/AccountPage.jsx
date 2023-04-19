@@ -49,7 +49,7 @@ const AccountPage = () => {
           </button>
         </div>
       )}
-      {subapage === 'places' && (
+      {subpage === 'places' && (
         <PlacesPage />
       )}
     </div>)
