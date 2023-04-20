@@ -181,3 +181,9 @@ button:hover {
 .places-link-new {
   padding: .8em;
 }
+
+.place-form>input {
+  min-width: 60%;
+  padding: 1em;
+  border-radius: 35px;
+}
