@@ -40,7 +40,7 @@ const PlacesPage = () => {
               <input type="text" placeholder='Add a photo link' value={photoLink} onChange={e => setPhotoLink(e.target.value)}/>
               <button onClick={addPhoto}>+</button>
               <div className='photo-container'>{addedPhotos.length > 0 && addedPhotos.map(link => <div>
-                {link}
+                <img src={'http://localhost:4000/uploads/' + link} />
               </div>)}</div>
               <h2>Description</h2>
               <textarea value={description} onChange={e => setDescription(e.target.value)}></textarea>
