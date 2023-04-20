@@ -15,6 +15,8 @@ const PlacesPage = () => {
               <h2>Address</h2>
               <input type="text" placeholder='address'/>
               <h2>Photos</h2>
+              <button>+</button>
+              <div className='photo-container'></div>
             </form>
         </div>)}
         
