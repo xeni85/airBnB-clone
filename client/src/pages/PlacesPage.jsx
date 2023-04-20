@@ -18,6 +18,15 @@ const PlacesPage = () => {
               <input type="text" placeholder='Add a photo link'/>
               <button>+</button>
               <div className='photo-container'></div>
+              <h2>Description</h2>
+              <textarea placeholder='Description'></textarea>
+              <h2>Perks</h2>
+              <div>
+                <label htmlFor="">
+                  <input type="checkbox" />
+                  <span>Wifi</span>
+                  </label>
+              </div>
             </form>
         </div>)}
         

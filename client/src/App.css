@@ -197,3 +197,9 @@ button:hover {
   font-size: xx-large;
   margin-top: .1em;;
 }
+
+.place-form>textarea {
+  min-width: 63%;
+  height: 15vh;
+  border-radius: 15px;
+}
