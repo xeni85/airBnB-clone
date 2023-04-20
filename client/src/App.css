@@ -203,3 +203,16 @@ button:hover {
   height: 15vh;
   border-radius: 15px;
 }
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkbox-container>label {
+  border: solid 0.014rem gray;
+  width: 20%;
+  margin:1em;
+  padding: 0.5rem;
+  border-radius: 15px;
+}

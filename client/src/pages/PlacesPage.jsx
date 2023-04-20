@@ -19,9 +19,9 @@ const PlacesPage = () => {
               <button>+</button>
               <div className='photo-container'></div>
               <h2>Description</h2>
-              <textarea placeholder='Description'></textarea>
+              <textarea ></textarea>
               <h2>Perks</h2>
-              <div>
+              <div className='checkbox-container'>
                 <label htmlFor="">
                   <input type="checkbox" />
                   <span>Wifi</span>
@@ -43,6 +43,8 @@ const PlacesPage = () => {
                   <span>TV</span>
                   </label>
               </div>
+              <h2>Extra Info</h2>
+              <textarea ></textarea>
             </form>
         </div>)}
         
