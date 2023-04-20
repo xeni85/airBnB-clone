@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 
 const PlacesPage = () => {
   const {action } = useParams();
   const [title,setTitle] = useState('');
   const [address,setAddress] = useState('');
-  const [addedPhotos,setAddedPhotos] = useState([]);
+  const [photoLink,setPhotoLink] = useState([]);
   const [description,setDescription] = useState('');
   const [perks,setPerks] = useState([]);
   const [extraInfo,setExtraInfo] = useState('');
@@ -16,7 +17,8 @@ const PlacesPage = () => {
 
   async function addPhoto(e) {
     e.preventDefault();
-    await axios.post('/upload-by-link', {
+    console.log(photoLink)
+    const {data: fileName} = await axios.post('/upload-by-link', {
       link: photoLink
     })
   }
@@ -32,7 +34,7 @@ const PlacesPage = () => {
               <h2>Address</h2>
               <input type="text" placeholder='Address'value={address} onChange={e => setAddress(e.target.value)}/>
               <h2>Photos</h2>
-              <input type="text" placeholder='Add a photo link' addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
+              <input type="text" placeholder='Add a photo link' value={photoLink} onChange={e => setPhotoLink(e.target.value)}/>
               <button onClick={addPhoto}>+</button>
               <div className='photo-container'></div>
               <h2>Description</h2>

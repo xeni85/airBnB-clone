@@ -82,13 +82,15 @@ app.post('/logout', (req, res) => {
 })
 
 app.post('/upload-by-link', async (req, res) => {
+    console.log(req.body)
     const {link} = req.body;
-    const newName = Date.now() + '.jpeg';
+    
+    const newName = 'photo' + Date.now() + '.jpeg';
     await download.image({
         url: link,
         dest: __dirname + '/uploads' + newName
     })
-    res.json(__dirname + '/uploads' + newName)
+    res.json(newName)
 })
 
 app.listen(4000);
