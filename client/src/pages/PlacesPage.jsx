@@ -7,6 +7,7 @@ const PlacesPage = () => {
   const [title,setTitle] = useState('');
   const [address,setAddress] = useState('');
   const [photoLink,setPhotoLink] = useState([]);
+  const [addedPhotos, setAddedPhotos] = useState([]);
   const [description,setDescription] = useState('');
   const [perks,setPerks] = useState([]);
   const [extraInfo,setExtraInfo] = useState('');
@@ -18,9 +19,11 @@ const PlacesPage = () => {
   async function addPhoto(e) {
     e.preventDefault();
     console.log(photoLink)
-    const {data: fileName} = await axios.post('/upload-by-link', {
-      link: photoLink
+    const {data: fileName} = await axios.post('/upload-by-link', {link: photoLink})
+    setAddedPhotos(prev => {
+      return [...prev, fileName]
     })
+    setPhotoLink('');
   }
   return (
     <div>
@@ -36,7 +39,9 @@ const PlacesPage = () => {
               <h2>Photos</h2>
               <input type="text" placeholder='Add a photo link' value={photoLink} onChange={e => setPhotoLink(e.target.value)}/>
               <button onClick={addPhoto}>+</button>
-              <div className='photo-container'></div>
+              <div className='photo-container'>{addedPhotos.length > 0 && addedPhotos.map(link => <div>
+                {link}
+              </div>)}</div>
               <h2>Description</h2>
               <textarea value={description} onChange={e => setDescription(e.target.value)}></textarea>
               <h2>Perks</h2>
