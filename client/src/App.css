@@ -216,3 +216,9 @@ button:hover {
   padding: 0.5rem;
   border-radius: 15px;
 }
+
+.check-in-out>div>input {
+  min-width: 60%;
+  padding: 1em;
+  border-radius: 35px;
+}

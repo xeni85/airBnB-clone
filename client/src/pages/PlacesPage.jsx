@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 const PlacesPage = () => {
   const {action } = useParams();
+  const [title,setTitle] = useState('');
+  const [address,setAddress] = useState('');
+  const [addedPhotos,setAddedPhotos] = useState([]);
+  const [description,setDescription] = useState('');
+  const [perks,setPerks] = useState([]);
+  const [extraInfo,setExtraInfo] = useState('');
+  const [checkIn,setCheckIn] = useState('');
+  const [checkOut,setCheckOut] = useState('');
+  const [maxGuests,setMaxGuests] = useState(1);
+  const [redirect,setRedirect] = useState(false);
   return (
     <div>
         {action != 'new' && (<div className='places-container'>
@@ -47,10 +57,10 @@ const PlacesPage = () => {
               <textarea ></textarea>
               <h2>Check In & Out times, max guests</h2>
               <div className='check-in-out'>
-                <div><input type="text" />
+                <div><h3>Check in time</h3><input type="text" placeholder='2PM'/>
                 </div>
-                <div><input type="text" /></div>
-                <div><input type="text" /></div>
+                <div><h3>Check out time</h3><input type="text" placeholder='10AM'/></div>
+                <div><h3>Max number of guests</h3><input type="text" placeholder='4'/></div>
               </div>
             </form>
         </div>)}
