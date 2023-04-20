@@ -45,6 +45,13 @@ const PlacesPage = () => {
               </div>
               <h2>Extra Info</h2>
               <textarea ></textarea>
+              <h2>Check In & Out times, max guests</h2>
+              <div className='check-in-out'>
+                <div><input type="text" />
+                </div>
+                <div><input type="text" /></div>
+                <div><input type="text" /></div>
+              </div>
             </form>
         </div>)}
         
