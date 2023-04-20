@@ -86,7 +86,7 @@ app.post('/upload-by-link', async (req, res) => {
     console.log(req.body)
     const {link} = req.body;
     
-    const newName = 'photo' + Date.now() + '.jpeg';
+    const newName = 'photo' + Date.now() + '.jpg';
     await download.image({
         url: link,
         dest: __dirname + '/uploads' + newName
