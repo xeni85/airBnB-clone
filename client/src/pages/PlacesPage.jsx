@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
@@ -15,6 +15,7 @@ const PlacesPage = () => {
   const [checkOut,setCheckOut] = useState('');
   const [maxGuests,setMaxGuests] = useState(1);
   const [redirect,setRedirect] = useState(false);
+  const [places, setPlaces] = useState([])
 
   async function addPhoto(e) {
     e.preventDefault();
@@ -25,6 +26,12 @@ const PlacesPage = () => {
     })
     setPhotoLink('');
   }
+
+  useEffect(() => {
+    axios.get('places').then(({data}) => {
+      setPlaces(data);
+    })
+  }, [])
   return (
     <div>
         {action != 'new' && (<div className='places-container'>
