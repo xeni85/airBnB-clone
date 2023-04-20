@@ -190,8 +190,10 @@ button:hover {
 
 .place-form>button {
   min-width: 63%;
+  padding: .1em;
   background-color: rgb(241, 93, 117);
   color: white;
   border-radius: 35px;
   font-size: xx-large;
+  margin-top: .1em;;
 }

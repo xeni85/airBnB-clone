@@ -13,8 +13,9 @@ const PlacesPage = () => {
               <h2>Title</h2>
               <input type="text" placeholder='title, for example: Apartment'/>
               <h2>Address</h2>
-              <input type="text" placeholder='address'/>
+              <input type="text" placeholder='Address'/>
               <h2>Photos</h2>
+              <input type="text" placeholder='Add a photo link'/>
               <button>+</button>
               <div className='photo-container'></div>
             </form>
