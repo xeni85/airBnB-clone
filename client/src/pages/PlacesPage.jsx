@@ -26,6 +26,22 @@ const PlacesPage = () => {
                   <input type="checkbox" />
                   <span>Wifi</span>
                   </label>
+                <label htmlFor="">
+                  <input type="checkbox" />
+                  <span>Parking</span>
+                  </label>
+                <label htmlFor="">
+                  <input type="checkbox" />
+                  <span>Pets</span>
+                  </label>
+                <label htmlFor="">
+                  <input type="checkbox" />
+                  <span>Private Entrance</span>
+                  </label>
+                <label htmlFor="">
+                  <input type="checkbox" />
+                  <span>TV</span>
+                  </label>
               </div>
             </form>
         </div>)}
