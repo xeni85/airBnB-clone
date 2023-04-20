@@ -10,6 +10,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config()
 const jwtSecret = 'skdfnlskdhaofijwekrn2934sdf'
 const cookieParser = require('cookie-parser')
+const download = require('image-downloader')
 
 
 app.use(express.json());
@@ -78,6 +79,16 @@ res.json('user info')
 
 app.post('/logout', (req, res) => {
     res.cookie('token', '').json(true);
+})
+
+app.post('/upload-by-link', async (req, res) => {
+    const {link} = req.body;
+    const newName = Date.now() + '.jpeg';
+    await download.image({
+        url: link,
+        dest: __dirname + '/uploads' + newName
+    })
+    res.json(__dirname + '/uploads' + newName)
 })
 
 app.listen(4000);
